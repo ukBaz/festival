@@ -1,5 +1,7 @@
 // CONSTANTS
-var image_default = '/home/pi/losp/keep_walking.jpg';
+var image_default = '/home/pi/losp/move.png';
+var splash = '/home/pi/losp/welcome.png';
+var dockImg = '/home/pi/losp/reset.png';
 var image10 = '/home/pi/losp/image10.png';
 var image11 = '/home/pi/losp/image11.png';
 var image20 = '/home/pi/losp/image20.png';
@@ -41,13 +43,63 @@ var rangeLimit = 3;
 var playMax = 2;
 var lastPlayed = '';
 var checking = false;
+var docked = false;
 var timeLimit = 0;
+var timer;
 
 // Load beacon scanner package
 var UriBeaconScanner = require('uri-beacon-scanner');
 // load package to run child process
 var childProcess = require('child_process');
 
+
+
+startTimer = function() {
+    timer = setTimeout(function() {
+        docked = false;
+        imgDisplay(splash);
+    }, 5000);
+};
+
+resetTimer = function() {
+    clearTimeout(timer);
+    startTimer();
+};
+
+function imgDisplay(img) {
+    picture = childProcess.exec('sudo fbi -T 2 -d /dev/fb1 -noverbose -a '
+                                            + img, function(error, stdout, stderr) {
+        if (error) {
+            console.log(error.stack);
+            console.log('Error code: '+error.code);
+            console.log('Signal received: '+error.signal);
+        }
+        console.log('Child Process STDOUT: '+stdout);
+        console.log('Child Process STDERR: '+stderr);
+    });
+    picture.on('exit', function(code) {
+        console.log('Show exit code '+code);
+        // UriBeaconScanner.startScanning();
+    });
+};
+
+function reset(img) {
+    if(!docked) {
+        imgDisplay(img);
+    };
+    docked = true;
+    lastPlayed = '';
+    resetTimer();
+    number1.startOver();
+    number2.startOver();
+    number3.startOver();
+    number4.startOver();
+    number5.startOver();
+    number6.startOver();
+    number7.startOver();
+    number8.startOver();
+    number9.startOver();
+};
 
 // Ranging function
 function calc_range(rssi, tx_power) {
@@ -162,6 +214,12 @@ station.prototype.play = function(txPower, rssi) {
     };
 };
 
+station.prototype.startOver = function() {
+    this.playCount = 0;
+    this.lastPlayed  = 0;
+    this.showImage = true;
+};
+
 // Create instances of the stations
 walking = new station('walking', '', image_default, '', '');
 number1 = new station('number1', audio10, image10, audio11, image11);
@@ -176,7 +234,7 @@ number9 = new station('number9', audio90, image90, audio91, image91);
 
 // Event handler for when beacon is discovered
 UriBeaconScanner.on('discover', function(uriBeacon) {
-    if (!checking) {
+    if (!checking && !docked) {
         checking = true;
         console.log();
         console.log('discovered UriBeacon:');
@@ -214,7 +272,15 @@ UriBeaconScanner.on('discover', function(uriBeacon) {
         }
         checking = false;
     }
+    if(uriBeacon.uri.search('1972') > 0) {
+        if(calc_range(uriBeacon.rssi, uriBeacon.txPower) < 3 ) {
+            reset(dockImg)
+        }
+
+    }
 });
 
+imgDisplay(splash);
+resetTimer();
 // Start scanning for beacons (duplicates allowed)
 UriBeaconScanner.startScanning(true);
