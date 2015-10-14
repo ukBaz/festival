@@ -41,6 +41,7 @@ var rangeLimit = 3;
 var playMax = 2;
 var lastPlayed = '';
 var checking = false;
+var timeLimit = 0;
 
 // Load beacon scanner package
 var UriBeaconScanner = require('uri-beacon-scanner');
@@ -74,6 +75,7 @@ function calc_range_alt(rssi, tx_power) {
 var station = function(name, audio1, image1, audio2, image2) {
     console.log('station creation');
     this.playCount = 0;
+    this.lastPlayed  = 0;
     this.showImage = true;
     this.beacon = name;
     this.audio1 = audio1;
@@ -86,9 +88,11 @@ var station = function(name, audio1, image1, audio2, image2) {
 
 // Test for if station is in range and hasn't just been played
 station.prototype.playTest = function(txPower, rssi) {
+    now = Math.floor(new Date()/1000);
     if (calc_range_alt(rssi, txPower) < rangeLimit
                 && this.playCount < playMax
-                && this.beacon != lastPlayed) {
+                && this.beacon != lastPlayed
+                && now - this.lastPlayed > timeLimit) {
         if (this.playCount == 0) {
             console.log('Play beacon ' + this.beacon + ' ' + this.playCount)
             this.playCount = 1;
@@ -102,6 +106,7 @@ station.prototype.playTest = function(txPower, rssi) {
             this.audio = this.audio2;
             lastPlayed = this.beacon;
         }
+        this.lastPlayed = now;
         this.showImage = true;
         return true;
     } else {
