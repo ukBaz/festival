@@ -1,43 +1,52 @@
 // CONSTANTS
-var image_default = '/home/pi/losp/move.png';
+var image_default = '/home/pi/losp/grey.png';
 var splash = '/home/pi/losp/welcome.png';
 var dockImg = '/home/pi/losp/reset.png';
-var image10 = '/home/pi/losp/image10.png';
-var image11 = '/home/pi/losp/image11.png';
-var image20 = '/home/pi/losp/image20.png';
-var image21 = '/home/pi/losp/image21.png';
-var image30 = '/home/pi/losp/image30.png';
-var image31 = '/home/pi/losp/image31.png';
-var image40 = '/home/pi/losp/image40.png';
-var image41 = '/home/pi/losp/image41.png';
-var image50 = '/home/pi/losp/image50.png';
-var image51 = '/home/pi/losp/image51.png';
-var image60 = '/home/pi/losp/image60.png';
-var image61 = '/home/pi/losp/image61.png';
-var image70 = '/home/pi/losp/image70.png';
-var image71 = '/home/pi/losp/image71.png';
-var image80 = '/home/pi/losp/image80.png';
-var image81 = '/home/pi/losp/image81.png';
-var image90 = '/home/pi/losp/image90.png';
-var image91 = '/home/pi/losp/image91.png';
-var audio10 = '/home/pi/losp/audio10.wav';
-var audio11 = '/home/pi/losp/audio11.wav';
-var audio20 = '/home/pi/losp/audio20.wav';
-var audio21 = '/home/pi/losp/audio21.wav';
-var audio30 = '/home/pi/losp/audio30.wav';
-var audio31 = '/home/pi/losp/audio31.wav';
-var audio40 = '/home/pi/losp/audio40.wav';
-var audio41 = '/home/pi/losp/audio41.wav';
-var audio50 = '/home/pi/losp/audio50.wav';
-var audio51 = '/home/pi/losp/audio51.wav';
-var audio60 = '/home/pi/losp/audio60.wav';
-var audio61 = '/home/pi/losp/audio61.wav';
-var audio70 = '/home/pi/losp/audio70.wav';
-var audio71 = '/home/pi/losp/audio71.wav';
-var audio80 = '/home/pi/losp/audio80.wav';
-var audio81 = '/home/pi/losp/audio81.wav';
-var audio90 = '/home/pi/losp/audio90.wav';
-var audio91 = '/home/pi/losp/audio91.wav';
+// Beacon 1
+var image10 = '/home/pi/losp/Ohm_1_A.jpg';
+var image11 = '/home/pi/losp/Ohm_1_R.jpg';
+var audio10 = '/home/pi/losp/a-draft.wav';
+var audio11 = '/home/pi/losp/r-draft.wav';
+// Beacon 2
+var image20 = '/home/pi/losp/Ohm_2_B.jpg';
+var image21 = '/home/pi/losp/Ohm_2_Q.jpg';
+var audio20 = '/home/pi/losp/b-draft.wav';
+var audio21 = '/home/pi/losp/q-draft.wav';
+// Beacon 3
+var image30 = '/home/pi/losp/Ohm_3_C.jpg';
+var image31 = '/home/pi/losp/Ohm_3_P.jpg';
+var audio30 = '/home/pi/losp/c-draft.wav';
+var audio31 = '/home/pi/losp/p-draft.wav';
+// Beacon 4
+var image40 = '/home/pi/losp/Ohm_4_D.jpg';
+var image41 = '/home/pi/losp/Ohm_4_O.jpg';
+var audio40 = '/home/pi/losp/d-draft.wav';
+var audio41 = '/home/pi/losp/o-draft.wav';
+// Beacon 5
+var image50 = '/home/pi/losp/Ohm_5_E.jpg';
+var image51 = '/home/pi/losp/Ohm_5_N.jpg';
+var audio50 = '/home/pi/losp/e-draft.wav';
+var audio51 = '/home/pi/losp/n-draft.wav';
+// Beacon 6
+var image60 = '/home/pi/losp/Ohm_6_F.jpg';
+var image61 = '/home/pi/losp/Ohm_6_M.jpg';
+var audio60 = '/home/pi/losp/f-draft.wav';
+var audio61 = '/home/pi/losp/m-draft.wav';
+// Beacon 7
+var image70 = '/home/pi/losp/Ohm_7_G.jpg';
+var image71 = '/home/pi/losp/Ohm_7_L.jpg';
+var audio70 = '/home/pi/losp/g-draft.wav';
+var audio71 = '/home/pi/losp/l-draft.wav';
+// Beacon 8
+var image80 = '/home/pi/losp/Ohm_8_H.jpg';
+var image81 = '/home/pi/losp/Ohm_8_J.jpg';
+var audio80 = '/home/pi/losp/h-draft.wav';
+var audio81 = '/home/pi/losp/j-draft.wav';
+// Beacon 9
+var image90 = '/home/pi/losp/Ohm_9_I.jpg';
+var image91 = '/home/pi/losp/Ohm_9_K.jpg';
+var audio90 = '/home/pi/losp/i-draft.wav';
+var audio91 = '/home/pi/losp/k-draft.wav';
 
 var rangeLimit = 3;
 var playMax = 2;
