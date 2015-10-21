@@ -5,48 +5,48 @@ var dockImg = '/home/pi/losp/reset.png';
 // Beacon 1
 var image10 = '/home/pi/losp/Revised_Ohm_1_A.jpg';
 var image11 = '/home/pi/losp/Revised_Ohm_1_R.jpg';
-var audio10 = '/home/pi/losp/a-draft.wav';
-var audio11 = '/home/pi/losp/r-draft.wav';
+var audio10 = '/home/pi/losp/a-final.wav';
+var audio11 = '/home/pi/losp/r-final.wav';
 // Beacon 2
 var image20 = '/home/pi/losp/Revised_Ohm_2_B.jpg';
 var image21 = '/home/pi/losp/Revised_Ohm_2_Q.jpg';
-var audio20 = '/home/pi/losp/b-draft.wav';
-var audio21 = '/home/pi/losp/q-draft.wav';
+var audio20 = '/home/pi/losp/b-final.wav';
+var audio21 = '/home/pi/losp/q-final.wav';
 // Beacon 3
 var image30 = '/home/pi/losp/Revised_Ohm_3_C.jpg';
 var image31 = '/home/pi/losp/Revised_Ohm_3_P.jpg';
-var audio30 = '/home/pi/losp/c-draft.wav';
-var audio31 = '/home/pi/losp/p-draft.wav';
+var audio30 = '/home/pi/losp/c-final.wav';
+var audio31 = '/home/pi/losp/p-final.wav';
 // Beacon 4
 var image40 = '/home/pi/losp/Revised_Ohm_4_D.jpg';
 var image41 = '/home/pi/losp/Revised_Ohm_4_O.jpg';
-var audio40 = '/home/pi/losp/d-draft.wav';
-var audio41 = '/home/pi/losp/o-draft.wav';
+var audio40 = '/home/pi/losp/d-final.wav';
+var audio41 = '/home/pi/losp/o-final.wav';
 // Beacon 5
 var image50 = '/home/pi/losp/Revised_Ohm_5_E.jpg';
 var image51 = '/home/pi/losp/Revised_Ohm_5_J.jpg';
-var audio50 = '/home/pi/losp/e-draft.wav';
-var audio51 = '/home/pi/losp/n-draft.wav';
+var audio50 = '/home/pi/losp/e-final.wav';
+var audio51 = '/home/pi/losp/j-final.wav';
 // Beacon 6
 var image60 = '/home/pi/losp/Revised_Ohm_6_F.jpg';
 var image61 = '/home/pi/losp/Revised_Ohm_6_K.jpg';
-var audio60 = '/home/pi/losp/f-draft.wav';
-var audio61 = '/home/pi/losp/m-draft.wav';
+var audio60 = '/home/pi/losp/f-final.wav';
+var audio61 = '/home/pi/losp/k-final.wav';
 // Beacon 7
 var image70 = '/home/pi/losp/Revised_Ohm_7_G.jpg';
 var image71 = '/home/pi/losp/Revised_Ohm_7_L.jpg';
-var audio70 = '/home/pi/losp/g-draft.wav';
-var audio71 = '/home/pi/losp/l-draft.wav';
+var audio70 = '/home/pi/losp/g-final.wav';
+var audio71 = '/home/pi/losp/l-final.wav';
 // Beacon 8
 var image80 = '/home/pi/losp/Revised_Ohm_8_H.jpg';
 var image81 = '/home/pi/losp/Revised_Ohm_8_M.jpg';
-var audio80 = '/home/pi/losp/h-draft.wav';
-var audio81 = '/home/pi/losp/j-draft.wav';
+var audio80 = '/home/pi/losp/h-final.wav';
+var audio81 = '/home/pi/losp/m-final.wav';
 // Beacon 9
 var image90 = '/home/pi/losp/Reivsed_Ohm_9_I.jpg';
 var image91 = '/home/pi/losp/Reivsed_Ohm_9_N.jpg';
-var audio90 = '/home/pi/losp/i-draft.wav';
-var audio91 = '/home/pi/losp/k-draft.wav';
+var audio90 = '/home/pi/losp/i-final.wav';
+var audio91 = '/home/pi/losp/n-final.wav';
 
 var rangeLimit = 2.5;
 var playMax = 99;
